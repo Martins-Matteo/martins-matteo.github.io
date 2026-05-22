@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matteo Martins — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+  <div class="grid-bg"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">MM</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glitch"></div>
+      <div class="hero-glitch2"></div>
+
+      <p class="hero-tag">// BTS SIO · SLAM · 2025-2027</p>
+      <h1>
+        Matteo
+        <span>Martins</span>
+      </h1>
+      <p class="hero-sub">
+        Étudiant développeur · <strong>Curieux par nature, code par passion.</strong><br>
+        Je construis des trucs qui marchent — et parfois même qui sont beaux.
+      </p>
+      <div class="hero-btns">
+        <a href="projets.html" class="btn-primary">Voir mes projets</a>
+        <a href="contact.html" class="btn-secondary">Me contacter</a>
+      </div>
+    </section>
+
+    <!-- APERÇU COMPÉTENCES -->
+    <section>
+      <div class="section-header">
+        <span class="section-tag">// Ce que je maîtrise</span>
+        <h2 class="section-title">Stack Technique</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="card">
+          <p class="skill-category-title">Développement</p>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">HTML / CSS</span><span class="skill-pct">75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">55%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">50%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">60%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <p class="skill-category-title">Systèmes & Réseaux</p>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Linux / Bash</span><span class="skill-pct">55%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Windows Server</span><span class="skill-pct">50%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">DNS / DHCP</span><span class="skill-pct">45%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header"><span class="skill-name">Cisco Packet Tracer</span><span class="skill-pct">45%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="competences.html" class="btn-secondary">Voir toutes mes compétences</a>
+      </div>
+    </section>
+
+    <!-- APERÇU PROJETS -->
+    <section>
+      <div class="section-header">
+        <span class="section-tag">// Ce que j'ai réalisé</span>
+        <h2 class="section-title">Projets récents</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">🐱</div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <h3 class="project-title">Yuumi Fan Site</h3>
+            <p class="project-desc">Site statique dédié à Yuumi, personnage de League of Legends. Design responsive, animations CSS et intégration de contenu multimédia.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">🏥</div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+              <span class="tag">BDD</span>
+            </div>
+            <h3 class="project-title">Projet GSB</h3>
+            <p class="project-desc">Application web dynamique de gestion de frais pour un laboratoire pharmaceutique fictif. Authentification, base de données et CRUD complet.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">🖥️</div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Hardware</span>
+              <span class="tag">Windows</span>
+            </div>
+            <h3 class="project-title">PC Custom Build</h3>
+            <p class="project-desc">Montage et configuration de postes de travail personnalisés. Sélection des composants, assemblage, installation et optimisation du système.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="projets.html" class="btn-secondary">Voir tous les projets</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-logo">MM</span>
+    <span class="footer-text">© 2026 Matteo Martins — BTS SIO SLAM</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

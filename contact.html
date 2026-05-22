@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Matteo Martins</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+  <div class="grid-bg"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">MM</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <p class="hero-tag">// Prenons contact</p>
+      <h1>Me <span>Contacter</span></h1>
+    </div>
+
+    <section>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Discutons ensemble</h3>
+          <p>
+            Que ce soit pour un projet, un stage, une question ou juste pour échanger — n'hésitez pas à m'écrire. Je réponds dans les plus brefs délais.
+          </p>
+
+          <a href="mailto:martins.matteo.dev@gmail.com" class="contact-link">
+            <span style="color:var(--violet-light); font-size:1.2rem;">✉</span>
+            martins.matteo.dev@gmail.com
+          </a>
+
+          <a href="https://github.com/Martins-Matteo" target="_blank" class="contact-link">
+            <span style="color:var(--violet-light); font-size:1.2rem;">⌨</span>
+            github.com/Martins-Matteo
+          </a>
+
+          <div class="card" style="margin-top:2rem;">
+            <p class="skill-category-title">Disponibilité</p>
+            <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; font-weight:300;">
+              Étudiant en BTS SIO · Disponible pour un <strong style="color:var(--violet-light);">stage</strong> à partir de la période prévue dans ma formation.<br><br>
+              Ouvert à toute opportunité de collaboration ou de projet.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Votre nom" required />
+            <input type="email" placeholder="Votre email" required />
+            <input type="text" placeholder="Sujet" />
+            <textarea placeholder="Votre message..."></textarea>
+            <button type="submit" class="btn-primary" style="width:100%; text-align:center; cursor:pointer; font-family:'Orbitron',monospace; font-size:0.8rem; font-weight:700; letter-spacing:2px;">
+              ENVOYER
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-logo">MM</span>
+    <span class="footer-text">© 2026 Matteo Martins — BTS SIO SLAM</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'MESSAGE ENVOYÉ ✓';
+      btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+      setTimeout(() => {
+        btn.textContent = 'ENVOYER';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
