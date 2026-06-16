@@ -4,133 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projets — Matteo Martins</title>
+  <meta name="description" content="Projets de Matteo Martins : développement web, base de données, infrastructure réseau, hardware et automatisation." />
+
+  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="cursor"></div>
-  <div class="cursor-ring"></div>
-  <div class="grid-bg"></div>
+  <!-- Voile de transition entre les pages -->
+  <div class="voile"></div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">MM</a>
-    <ul class="nav-links">
+  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
+  <div class="curseur"></div>
+  <div class="curseur-anneau"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Menu plein écran (mobile) -->
+  <div class="menu-mobile">
+    <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="apropos.html">À propos</a></li>
       <li><a href="competences.html">Compétences</a></li>
       <li><a href="projets.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
 
   <main>
-    <div class="page-hero">
-      <p class="hero-tag">// Ce que j'ai construit</p>
-      <h1>Mes <span>Projets</span></h1>
-    </div>
 
+    <!-- ============ ENTÊTE DE PAGE ============ -->
+    <header class="entete-page">
+      <p class="hero-etiquette" data-intro>// Ce que j'ai construit</p>
+      <h1 data-intro>Mes <span class="texte-degrade">projets</span></h1>
+    </header>
+
+    <!-- ============ GRILLE DE PROJETS ============ -->
     <section>
-      <div class="projects-grid">
+      <div class="grille-projets" data-reveal-groupe>
 
-        <div class="project-card">
-          <div class="project-img">🐱</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Statique</span>
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Chat (Yuumi) -->
+            <svg viewBox="0 0 48 48"><path d="M14 12 L10 4 L19 8" /><path d="M34 12 L38 4 L29 8" /><circle cx="24" cy="24" r="14" /><circle cx="19" cy="22" r="0.8" fill="currentColor" /><circle cx="29" cy="22" r="0.8" fill="currentColor" /><path d="M21 28 Q24 31 27 28" /><path d="M4 22 L10 23 M4 28 L10 27 M44 22 L38 23 M44 28 L38 27" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">HTML</span>
+              <span class="etiquette">CSS</span>
+              <span class="etiquette">Statique</span>
             </div>
-            <h3 class="project-title">Yuumi Fan Site</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">Yuumi Fan Site</h3>
+            <p class="projet-desc">
               Site statique dédié à Yuumi, personnage de League of Legends. Projet réalisé dans le cadre du BTS SIO pour maîtriser les fondamentaux du web : structure HTML sémantique, mise en page CSS, responsive design et intégration de médias.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-          <div class="project-img">🏥</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">BDD</span>
-              <span class="tag">MVC</span>
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Base de données -->
+            <svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="14" ry="5" /><path d="M10 10 V38 C10 40.8 16.3 43 24 43 C31.7 43 38 40.8 38 38 V10" /><path d="M10 24 C10 26.8 16.3 29 24 29 C31.7 29 38 26.8 38 24" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">PHP</span>
+              <span class="etiquette">MySQL</span>
+              <span class="etiquette">BDD</span>
+              <span class="etiquette">MVC</span>
             </div>
-            <h3 class="project-title">Projet GSB</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">Projet GSB</h3>
+            <p class="projet-desc">
               Application web dynamique de gestion des frais de déplacement pour le laboratoire fictif Galaxy Swiss Bourdin. Système d'authentification, gestion des fiches de frais, base de données relationnelle et interface administrateur.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-          <div class="project-img">🖥️</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">Hardware</span>
-              <span class="tag">Windows</span>
-              <span class="tag">Optimisation</span>
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Tour PC -->
+            <svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="2" /><circle cx="24" cy="14" r="4" /><circle cx="24" cy="28" r="4" /><path d="M19 38 H29" /><circle cx="30" cy="8" r="0.8" fill="currentColor" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">Hardware</span>
+              <span class="etiquette">Windows</span>
+              <span class="etiquette">Optimisation</span>
             </div>
-            <h3 class="project-title">PC Custom Build</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">PC Custom Build</h3>
+            <p class="projet-desc">
               Montage et configuration de postes de travail personnalisés selon les besoins. Sélection des composants en fonction du budget et de l'usage, assemblage, installation OS, optimisation des performances et overclock.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-          <div class="project-img">🌐</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">Linux</span>
-              <span class="tag">DNS</span>
-              <span class="tag">DHCP</span>
-              <span class="tag">Réseau</span>
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Réseau (nœuds reliés) -->
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="10" r="4.5" /><circle cx="10" cy="36" r="4.5" /><circle cx="38" cy="36" r="4.5" /><path d="M21.5 14 L12.5 32.5 M26.5 14 L35.5 32.5 M14.5 36 H33.5" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">Linux</span>
+              <span class="etiquette">DNS</span>
+              <span class="etiquette">DHCP</span>
+              <span class="etiquette">Réseau</span>
             </div>
-            <h3 class="project-title">Infrastructure Réseau TP</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">Infrastructure Réseau TP</h3>
+            <p class="projet-desc">
               Mise en place d'une infrastructure réseau simulée sous Cisco Packet Tracer et en environnement Linux. Configuration des services DNS, DHCP, routage et adressage IP sur un réseau d'entreprise fictif.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card">
-          <div class="project-img">🐍</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">Bash</span>
-              <span class="tag">Automatisation</span>
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Terminal -->
+            <svg viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="30" rx="3" /><path d="M12 19 L18 24 L12 29" /><path d="M22 29 H30" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">Python</span>
+              <span class="etiquette">Bash</span>
+              <span class="etiquette">Automatisation</span>
             </div>
-            <h3 class="project-title">Scripts d'automatisation</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">Scripts d'automatisation</h3>
+            <p class="projet-desc">
               Développement de scripts Python et Bash pour automatiser des tâches répétitives : gestion de fichiers, traitement de données, surveillance système et déploiement. Gain de temps significatif sur les tâches d'administration.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="project-card" style="border-style: dashed; opacity: 0.6;">
-          <div class="project-img" style="font-size:2rem; color:var(--text-muted);">+</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">À venir</span>
+        <article class="projet-carte a-venir">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Plus -->
+            <svg viewBox="0 0 48 48"><path d="M24 14 V34 M14 24 H34" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">À venir</span>
             </div>
-            <h3 class="project-title">Prochain projet</h3>
-            <p class="project-desc">
+            <h3 class="projet-titre">Prochain projet</h3>
+            <p class="projet-desc">
               De nouveaux projets arrivent au fil de la formation. Revenez régulièrement pour voir les dernières réalisations.
             </p>
           </div>
-        </div>
+        </article>
 
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <span class="footer-logo">MM</span>
-    <span class="footer-text">© 2026 Matteo Martins — BTS SIO SLAM</span>
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <span class="pied-logo">M<span>M</span></span>
+    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins — BTS SIO SLAM</p>
+    <div class="pied-liens">
+      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Librairies (CDN) : GSAP pour les animations au scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

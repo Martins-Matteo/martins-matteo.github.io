@@ -4,143 +4,183 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Compétences — Matteo Martins</title>
+  <meta name="description" content="Compétences techniques de Matteo Martins : développement web, SQL, Python, systèmes Windows et Linux, réseaux et hardware." />
+
+  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="cursor"></div>
-  <div class="cursor-ring"></div>
-  <div class="grid-bg"></div>
+  <!-- Voile de transition entre les pages -->
+  <div class="voile"></div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">MM</a>
-    <ul class="nav-links">
+  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
+  <div class="curseur"></div>
+  <div class="curseur-anneau"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Menu plein écran (mobile) -->
+  <div class="menu-mobile">
+    <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="apropos.html">À propos</a></li>
       <li><a href="competences.html">Compétences</a></li>
       <li><a href="projets.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
 
   <main>
-    <div class="page-hero">
-      <p class="hero-tag">// Mon arsenal technique</p>
-      <h1>Mes <span>Compétences</span></h1>
-    </div>
 
+    <!-- ============ ENTÊTE DE PAGE ============ -->
+    <header class="entete-page">
+      <p class="hero-etiquette" data-intro>// Mon arsenal technique</p>
+      <h1 data-intro>Mes <span class="texte-degrade">compétences</span></h1>
+    </header>
+
+    <!-- ============ GRILLE DE COMPÉTENCES ============ -->
     <section>
-      <div class="skills-grid">
+      <div class="grille-competences" data-reveal-groupe>
 
-        <!-- DEV WEB -->
-        <div class="card">
-          <p class="skill-category-title">⚡ Développement Web</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">HTML5</span><span class="skill-pct">80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+        <!-- Développement web -->
+        <div class="carte">
+          <p class="carte-titre">Développement web</p>
+          <div class="competence" data-niveau="80">
+            <div class="competence-entete"><span class="competence-nom">HTML5</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">CSS3</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+          <div class="competence" data-niveau="70">
+            <div class="competence-entete"><span class="competence-nom">CSS3</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">JavaScript</span><span class="skill-pct">40%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="40%"></div></div>
+          <div class="competence" data-niveau="40">
+            <div class="competence-entete"><span class="competence-nom">JavaScript</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
         </div>
 
-        <!-- LANGAGES -->
-        <div class="card">
-          <p class="skill-category-title">🖥️ Langages de programmation</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+        <!-- Langages & bases de données -->
+        <div class="carte">
+          <p class="carte-titre">Langages &amp; bases de données</p>
+          <div class="competence" data-niveau="85">
+            <div class="competence-entete"><span class="competence-nom">SQL</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">50%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+          <div class="competence" data-niveau="70">
+            <div class="competence-entete"><span class="competence-nom">Python</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">60%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
-          </div>
-        </div>
-
-        <!-- SYSTÈMES -->
-        <div class="card">
-          <p class="skill-category-title">🐧 Systèmes d'exploitation</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Linux</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Bash / Shell</span><span class="skill-pct">50%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Windows</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+          <div class="competence" data-niveau="55">
+            <div class="competence-entete"><span class="competence-nom">Java</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
         </div>
 
-        <!-- RÉSEAUX -->
-        <div class="card">
-          <p class="skill-category-title">🌐 Réseaux & Infrastructure</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">DNS / DHCP</span><span class="skill-pct">45%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+        <!-- Systèmes d'exploitation (Windows en tête : point fort) -->
+        <div class="carte">
+          <p class="carte-titre">Systèmes d'exploitation</p>
+          <div class="competence" data-niveau="80">
+            <div class="competence-entete"><span class="competence-nom">Windows</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Cisco Packet Tracer</span><span class="skill-pct">45%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          <div class="competence" data-niveau="65">
+            <div class="competence-entete"><span class="competence-nom">Linux</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Architecture réseau</span><span class="skill-pct">40%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="40%"></div></div>
-          </div>
-        </div>
-
-        <!-- HARDWARE -->
-        <div class="card">
-          <p class="skill-category-title">🔧 Hardware & Autre</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Montage PC</span><span class="skill-pct">85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Diagnostic matériel</span><span class="skill-pct">70%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Git / GitHub</span><span class="skill-pct">45%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          <div class="competence" data-niveau="60">
+            <div class="competence-entete"><span class="competence-nom">Bash / Shell</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
         </div>
 
-        <!-- EN COURS -->
-        <div class="card">
-          <p class="skill-category-title">📈 En cours d'apprentissage</p>
-          <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8; font-weight:300;">
-            Je continue d'explorer de nouvelles technologies chaque semaine. Actuellement en train d'approfondir :
+        <!-- Réseaux & infrastructure -->
+        <div class="carte">
+          <p class="carte-titre">Réseaux &amp; infrastructure</p>
+          <div class="competence" data-niveau="50">
+            <div class="competence-entete"><span class="competence-nom">Architecture réseau</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+          <div class="competence" data-niveau="45">
+            <div class="competence-entete"><span class="competence-nom">DNS / DHCP</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+          <div class="competence" data-niveau="45">
+            <div class="competence-entete"><span class="competence-nom">Cisco Packet Tracer</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+        </div>
+
+        <!-- Hardware & outils -->
+        <div class="carte">
+          <p class="carte-titre">Hardware &amp; outils</p>
+          <div class="competence" data-niveau="85">
+            <div class="competence-entete"><span class="competence-nom">Montage PC</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+          <div class="competence" data-niveau="70">
+            <div class="competence-entete"><span class="competence-nom">Diagnostic matériel</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+          <div class="competence" data-niveau="45">
+            <div class="competence-entete"><span class="competence-nom">Git / GitHub</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
+          </div>
+        </div>
+
+        <!-- En cours d'apprentissage -->
+        <div class="carte">
+          <p class="carte-titre">En cours d'apprentissage</p>
+          <p style="color: var(--texte-2); font-size: 0.92rem; line-height: 1.8;">
+            J'explore de nouvelles technologies en continu. Actuellement en train d'approfondir :
           </p>
-          <div style="display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:1rem;">
-            <span class="tag">React</span>
-            <span class="tag">PHP</span>
-            <span class="tag">Docker</span>
-            <span class="tag">API REST</span>
-            <span class="tag">Node.js</span>
+          <div class="nuage-etiquettes">
+            <span class="etiquette">React</span>
+            <span class="etiquette">PHP</span>
+            <span class="etiquette">Docker</span>
+            <span class="etiquette">API REST</span>
+            <span class="etiquette">Node.js</span>
           </div>
         </div>
 
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <span class="footer-logo">MM</span>
-    <span class="footer-text">© 2026 Matteo Martins — BTS SIO SLAM</span>
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <span class="pied-logo">M<span>M</span></span>
+    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins — BTS SIO SLAM</p>
+    <div class="pied-liens">
+      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Librairies (CDN) : GSAP pour les animations au scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

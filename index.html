@@ -4,149 +4,236 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Matteo Martins — Portfolio</title>
+  <meta name="description" content="Portfolio de Matteo Martins, étudiant développeur en BTS SIO option SLAM. Développement, bases de données, systèmes et réseaux." />
+
+  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="cursor"></div>
-  <div class="cursor-ring"></div>
-  <div class="grid-bg"></div>
+  <!-- Voile de transition entre les pages -->
+  <div class="voile"></div>
 
-  <nav>
-    <a href="index.html" class="nav-logo">MM</a>
-    <ul class="nav-links">
+  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
+  <div class="curseur"></div>
+  <div class="curseur-anneau"></div>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
+    <nav aria-label="Navigation principale">
+      <ul class="nav-liens">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="competences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Menu plein écran (mobile) -->
+  <div class="menu-mobile">
+    <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="apropos.html">À propos</a></li>
       <li><a href="competences.html">Compétences</a></li>
       <li><a href="projets.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </nav>
+  </div>
 
   <main>
+
+    <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="hero-glitch"></div>
-      <div class="hero-glitch2"></div>
+      <!-- Fond animé : particules + icosaèdre 3D (accueil.js) -->
+      <div class="hero-fond" aria-hidden="true">
+        <canvas id="toile-particules"></canvas>
+        <canvas id="toile-3d"></canvas>
+      </div>
 
-      <p class="hero-tag">// BTS SIO · SLAM · 2025-2027</p>
-      <h1>
-        Matteo
-        <span>Martins</span>
-      </h1>
-      <p class="hero-sub">
-        Étudiant développeur · <strong>Curieux par nature, code par passion.</strong><br>
-        Je construis des trucs qui marchent — et parfois même qui sont beaux.
-      </p>
-      <div class="hero-btns">
-        <a href="projets.html" class="btn-primary">Voir mes projets</a>
-        <a href="contact.html" class="btn-secondary">Me contacter</a>
+      <div class="hero-contenu">
+        <span class="badge-stage" data-intro>
+          <span class="point"></span>
+          En stage chez HAROPA PORT — Rouen
+        </span>
+
+        <p class="hero-etiquette" data-intro>// BTS SIO · SLAM · 2025 — 2027</p>
+
+        <h1 class="hero-titre" data-intro>
+          Matteo<br />
+          <span class="texte-degrade">Martins</span>
+        </h1>
+
+        <!-- ✏️ ACCROCHE PLACEHOLDER — remplace cette phrase par la tienne -->
+        <p class="hero-sous-titre" data-intro>
+          Étudiant développeur. <strong>Sérieux dans le code,</strong> un peu moins dans les commentaires.
+        </p>
+
+        <div class="hero-actions" data-intro>
+          <a href="projets.html" class="btn btn-principal">Voir mes projets</a>
+          <a href="contact.html" class="btn btn-contour">Me contacter</a>
+        </div>
+      </div>
+
+      <div class="indicateur-scroll" aria-hidden="true">
+        <span>Défiler</span>
+        <span class="ligne-scroll"></span>
       </div>
     </section>
 
-    <!-- APERÇU COMPÉTENCES -->
+    <!-- ============ APERÇU COMPÉTENCES ============ -->
     <section>
-      <div class="section-header">
-        <span class="section-tag">// Ce que je maîtrise</span>
-        <h2 class="section-title">Stack Technique</h2>
+      <div class="section-entete" data-reveal>
+        <span class="section-etiquette">// Ce que je maîtrise</span>
+        <h2 class="section-titre">Stack technique</h2>
       </div>
-      <div class="skills-grid">
-        <div class="card">
-          <p class="skill-category-title">Développement</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">HTML / CSS</span><span class="skill-pct">75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+
+      <div class="grille-competences" data-reveal-groupe>
+        <div class="carte">
+          <p class="carte-titre">Développement</p>
+          <div class="competence" data-niveau="85">
+            <div class="competence-entete"><span class="competence-nom">SQL</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Java</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+          <div class="competence" data-niveau="75">
+            <div class="competence-entete"><span class="competence-nom">HTML / CSS</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Python</span><span class="skill-pct">50%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+          <div class="competence" data-niveau="70">
+            <div class="competence-entete"><span class="competence-nom">Python</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">SQL</span><span class="skill-pct">60%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="60%"></div></div>
+          <div class="competence" data-niveau="55">
+            <div class="competence-entete"><span class="competence-nom">Java</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
         </div>
-        <div class="card">
-          <p class="skill-category-title">Systèmes & Réseaux</p>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Linux / Bash</span><span class="skill-pct">55%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="55%"></div></div>
+
+        <div class="carte">
+          <p class="carte-titre">Systèmes &amp; Réseaux</p>
+          <div class="competence" data-niveau="80">
+            <div class="competence-entete"><span class="competence-nom">Windows / Windows Server</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Windows Server</span><span class="skill-pct">50%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="50%"></div></div>
+          <div class="competence" data-niveau="65">
+            <div class="competence-entete"><span class="competence-nom">Linux / Bash</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">DNS / DHCP</span><span class="skill-pct">45%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          <div class="competence" data-niveau="50">
+            <div class="competence-entete"><span class="competence-nom">Architecture réseau</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Cisco Packet Tracer</span><span class="skill-pct">45%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="45%"></div></div>
+          <div class="competence" data-niveau="45">
+            <div class="competence-entete"><span class="competence-nom">Cisco Packet Tracer</span><span class="competence-pct">0%</span></div>
+            <div class="competence-barre"><div class="competence-remplissage"></div></div>
           </div>
         </div>
       </div>
-      <div style="margin-top:2rem;">
-        <a href="competences.html" class="btn-secondary">Voir toutes mes compétences</a>
+
+      <div class="section-pied" data-reveal>
+        <a href="competences.html" class="btn btn-contour">Toutes mes compétences</a>
       </div>
     </section>
 
-    <!-- APERÇU PROJETS -->
-    <section>
-      <div class="section-header">
-        <span class="section-tag">// Ce que j'ai réalisé</span>
-        <h2 class="section-title">Projets récents</h2>
+    <!-- ============ APERÇU PROJETS ============ -->
+    <section class="section-noire">
+      <div class="section-entete" data-reveal>
+        <span class="section-etiquette">// Ce que j'ai réalisé</span>
+        <h2 class="section-titre">Projets récents</h2>
       </div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-img">🐱</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-            </div>
-            <h3 class="project-title">Yuumi Fan Site</h3>
-            <p class="project-desc">Site statique dédié à Yuumi, personnage de League of Legends. Design responsive, animations CSS et intégration de contenu multimédia.</p>
+
+      <div class="grille-projets" data-reveal-groupe>
+
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Chat (Yuumi) -->
+            <svg viewBox="0 0 48 48"><path d="M14 12 L10 4 L19 8" /><path d="M34 12 L38 4 L29 8" /><circle cx="24" cy="24" r="14" /><circle cx="19" cy="22" r="0.8" fill="currentColor" /><circle cx="29" cy="22" r="0.8" fill="currentColor" /><path d="M21 28 Q24 31 27 28" /><path d="M4 22 L10 23 M4 28 L10 27 M44 22 L38 23 M44 28 L38 27" /></svg>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img">🏥</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">SQL</span>
-              <span class="tag">BDD</span>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">HTML</span>
+              <span class="etiquette">CSS</span>
             </div>
-            <h3 class="project-title">Projet GSB</h3>
-            <p class="project-desc">Application web dynamique de gestion de frais pour un laboratoire pharmaceutique fictif. Authentification, base de données et CRUD complet.</p>
+            <h3 class="projet-titre">Yuumi Fan Site</h3>
+            <p class="projet-desc">Site statique dédié à Yuumi, personnage de League of Legends. Design responsive, animations CSS et intégration de contenu multimédia.</p>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-img">🖥️</div>
-          <div class="project-body">
-            <div class="project-tags">
-              <span class="tag">Hardware</span>
-              <span class="tag">Windows</span>
+        </article>
+
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Base de données -->
+            <svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="14" ry="5" /><path d="M10 10 V38 C10 40.8 16.3 43 24 43 C31.7 43 38 40.8 38 38 V10" /><path d="M10 24 C10 26.8 16.3 29 24 29 C31.7 29 38 26.8 38 24" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">PHP</span>
+              <span class="etiquette">SQL</span>
+              <span class="etiquette">BDD</span>
             </div>
-            <h3 class="project-title">PC Custom Build</h3>
-            <p class="project-desc">Montage et configuration de postes de travail personnalisés. Sélection des composants, assemblage, installation et optimisation du système.</p>
+            <h3 class="projet-titre">Projet GSB</h3>
+            <p class="projet-desc">Application web dynamique de gestion de frais pour un laboratoire pharmaceutique fictif. Authentification, base de données et CRUD complet.</p>
           </div>
-        </div>
+        </article>
+
+        <article class="projet-carte">
+          <div class="projet-visuel" aria-hidden="true">
+            <!-- Tour PC -->
+            <svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="2" /><circle cx="24" cy="14" r="4" /><circle cx="24" cy="28" r="4" /><path d="M19 38 H29" /><circle cx="30" cy="8" r="0.8" fill="currentColor" /></svg>
+          </div>
+          <div class="projet-corps">
+            <div class="projet-etiquettes">
+              <span class="etiquette">Hardware</span>
+              <span class="etiquette">Windows</span>
+            </div>
+            <h3 class="projet-titre">PC Custom Build</h3>
+            <p class="projet-desc">Montage et configuration de postes de travail personnalisés. Sélection des composants, assemblage, installation et optimisation du système.</p>
+          </div>
+        </article>
+
       </div>
-      <div style="margin-top:2rem;">
-        <a href="projets.html" class="btn-secondary">Voir tous les projets</a>
+
+      <div class="section-pied" data-reveal>
+        <a href="projets.html" class="btn btn-contour">Tous les projets</a>
       </div>
     </section>
+
+    <!-- ============ APPEL À L'ACTION ============ -->
+    <section class="bandeau-cta">
+      <div data-reveal>
+        <h2>Un projet, un stage, <span class="texte-degrade">une question&nbsp;?</span></h2>
+        <p>Je réponds vite — et toujours avec plaisir.</p>
+        <a href="contact.html" class="btn btn-principal">Me contacter</a>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <span class="footer-logo">MM</span>
-    <span class="footer-text">© 2026 Matteo Martins — BTS SIO SLAM</span>
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <span class="pied-logo">M<span>M</span></span>
+    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins — BTS SIO SLAM</p>
+    <div class="pied-liens">
+      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Librairies (CDN) : GSAP pour les animations au scroll,
+       Three.js pour l'objet 3D du hero (accueil uniquement) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="accueil.js" defer></script>
 </body>
 </html>
