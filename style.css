@@ -348,6 +348,18 @@ html.menu-ouvert .menu-mobile li:nth-child(5) { transition-delay: 0.34s; }
   50% { transform: scale(1.45); opacity: 0.55; }
 }
 
+/* Badge d'accueil rendu cliquable (renvoie vers la page Expérience) */
+a.badge-stage {
+  text-decoration: none;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+a.badge-stage:hover {
+  border-color: var(--magenta);
+  background: rgba(231, 84, 200, 0.08);
+  transform: translateY(-2px);
+}
+
 .hero-etiquette {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -906,6 +918,10 @@ section { padding: 6.5rem 7vw; position: relative; }
   box-shadow: 0 0 10px var(--magenta);
   animation: pouls 2.4s ease-in-out infinite;
 }
+
+/* Variante « terminé » : même cadre, point lavande figé (pas de pulsation) */
+.badge-en-cours.est-termine { color: var(--lavande); border-color: var(--ligne-forte); }
+.badge-en-cours.est-termine .point { background: var(--lavande); box-shadow: 0 0 10px var(--lavande); animation: none; }
 
 .carte-stage h3 {
   font-family: var(--titres);
