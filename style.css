@@ -978,6 +978,146 @@ section { padding: 6.5rem 7vw; position: relative; }
 .interet p { font-size: 0.88rem; line-height: 1.7; color: var(--texte-2); }
 
 /* ============================================================
+   ACCORDÉON DES EXPÉRIENCES (page Expériences)
+   Chaque expérience est un bloc repliable : en-tête cliquable
+   (entreprise, rôle, dates) + panneau de détail animé en hauteur.
+   ============================================================ */
+
+.exp-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.exp-item {
+  background: var(--carte);
+  border: 1px solid var(--ligne);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.exp-item:hover { border-color: var(--ligne-forte); }
+.exp-item.ouvert {
+  border-color: var(--ligne-forte);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* En-tête cliquable */
+.exp-tete {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.8rem 2rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+
+.exp-tete-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.exp-badge { margin-bottom: 0.1rem; }
+
+.exp-entreprise {
+  font-family: var(--titres);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--texte);
+  line-height: 1.1;
+}
+
+.exp-meta {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--texte-2);
+}
+
+/* Chevron qui pivote à l'ouverture */
+.exp-chevron {
+  flex-shrink: 0;
+  width: 42px; height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ligne-forte);
+  border-radius: 50%;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, border-color 0.3s ease;
+}
+
+.exp-chevron svg {
+  width: 16px; height: 16px;
+  stroke: var(--lavande);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.exp-tete:hover .exp-chevron { border-color: var(--magenta); background: rgba(139, 92, 246, 0.08); }
+.exp-item.ouvert .exp-chevron { transform: rotate(180deg); border-color: var(--magenta); background: rgba(139, 92, 246, 0.12); }
+
+/* Panneau de détail (hauteur animée en JS) */
+.exp-panneau {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-contenu {
+  padding: 1.9rem 2rem 2.3rem;
+  border-top: 1px solid var(--ligne);
+}
+
+/* Paragraphe d'introduction d'une expérience */
+.exp-intro {
+  color: var(--texte-2);
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
+/* Sous-sections internes (Mission, Réalisations, Compétences, Bilan) */
+.exp-bloc + .exp-bloc { margin-top: 2.2rem; }
+
+.exp-sous-titre {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--violet-clair);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.exp-sous-titre::before {
+  content: '';
+  width: 20px; height: 1px;
+  background: var(--degrade);
+}
+
+.exp-bloc p { color: var(--texte-2); line-height: 1.85; font-size: 0.98rem; }
+.exp-bloc .stage-lieu { margin-bottom: 1rem; }
+
+@media (max-width: 640px) {
+  .exp-tete { padding: 1.3rem 1.3rem; gap: 1rem; }
+  .exp-entreprise { font-size: 1.1rem; }
+  .exp-meta { font-size: 0.68rem; }
+  .exp-chevron { width: 36px; height: 36px; }
+  .exp-contenu { padding: 1.5rem 1.3rem 1.9rem; }
+}
+
+/* ============================================================
    CONTACT
    ============================================================ */
 

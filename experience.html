@@ -57,166 +57,190 @@
 
     <!-- ============ ENTÊTE DE PAGE ============ -->
     <header class="entete-page">
-      <p class="hero-etiquette" data-intro>// Stage de fin de première année · BTS SIO</p>
+      <p class="hero-etiquette" data-intro>// Parcours professionnel</p>
       <h1 data-intro>Mes <span class="texte-degrade">expériences</span></h1>
     </header>
 
-    <!-- ============ 1. PRÉSENTATION ============ -->
-    <section class="section-noire">
-      <div class="section-entete" data-reveal>
-        <span class="section-etiquette">// Vue d'ensemble</span>
-        <h2 class="section-titre">Présentation du stage</h2>
-      </div>
-
-      <div class="carte carte-stage" data-reveal>
-        <span class="badge-en-cours est-termine"><span class="point"></span>Stage réalisé · du 18 mai au 26 juin 2026</span>
-        <h3>HAROPA PORT</h3>
-        <p class="stage-lieu">Site de Rouen · Service informatique · Stagiaire</p>
-        <p>
-          Six semaines au service informatique d'HAROPA PORT, l'établissement public qui réunit les ports du Havre, de Rouen et de Paris sur l'axe Seine. Un stage orienté support et infrastructure, qui m'a permis de découvrir de l'intérieur le fonctionnement d'un service informatique, ses responsabilités et son exigence au quotidien.
-        </p>
-      </div>
-
-      <!-- Chiffres clés -->
-      <div class="grille-stats" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 1.6rem;" data-reveal-groupe>
-        <div class="stat-boite">
-          <span class="stat-nombre">6</span>
-          <span class="stat-libelle">Semaines</span>
-        </div>
-        <div class="stat-boite">
-          <span class="stat-nombre">2026</span>
-          <span class="stat-libelle">Mai à juin</span>
-        </div>
-        <div class="stat-boite">
-          <span class="stat-nombre">Rouen</span>
-          <span class="stat-libelle">Site portuaire</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 2. MISSION PRINCIPALE ============ -->
+    <!-- ============ ACCORDÉON DES EXPÉRIENCES ============ -->
     <section>
-      <div class="section-entete" data-reveal>
-        <span class="section-etiquette">// Au quotidien</span>
-        <h2 class="section-titre">Ma mission principale</h2>
-      </div>
+      <p class="exp-intro" style="margin-bottom: 2.5rem; max-width: 620px;" data-reveal>
+        Mon parcours en entreprise, du plus récent au plus ancien. Sélectionnez une expérience pour en afficher le détail.
+      </p>
 
-      <div class="carte carte-stage" data-reveal>
-        <div class="interet-icone" aria-hidden="true" style="margin-bottom: 1.4rem;">
-          <!-- Casque support -->
-          <svg viewBox="0 0 24 24"><path d="M4 13 V11 A8 8 0 0 1 20 11 V13" /><rect x="2.6" y="13" width="3.4" height="6" rx="1.5" /><rect x="18" y="13" width="3.4" height="6" rx="1.5" /><path d="M20 19 V20 A2.5 2.5 0 0 1 17.5 22.5 H13" /><circle cx="12" cy="22.5" r="1.1" fill="currentColor" stroke="none" /></svg>
-        </div>
-        <h3>Support aux utilisateurs et gestion des tickets</h3>
-        <p class="stage-lieu">Logiciel de ticket · Diagnostic et résolution d'incidents</p>
-        <p>
-          Ma mission principale consistait à recevoir, diagnostiquer et résoudre les demandes des utilisateurs à l'aide du logiciel de gestion de tickets du service. Des incidents variés, du plus simple au plus complexe, qui m'ont appris à poser les bonnes questions, à isoler une cause et à expliquer clairement la solution apportée.
-        </p>
-        <div class="nuage-etiquettes" style="margin-top: 1.6rem;">
-          <span class="etiquette">Réseau / VLAN</span>
-          <span class="etiquette">Outlook</span>
-          <span class="etiquette">Teams</span>
-          <span class="etiquette">Périphériques</span>
-          <span class="etiquette">Écrans</span>
-        </div>
-      </div>
-    </section>
+      <div class="exp-liste" data-reveal-groupe>
 
-    <!-- ============ 3. AUTRES RÉALISATIONS ============ -->
-    <section class="section-noire">
-      <div class="section-entete" data-reveal>
-        <span class="section-etiquette">// Au-delà du support</span>
-        <h2 class="section-titre">Mes autres réalisations</h2>
-      </div>
+        <!-- ========================================================
+             EXPÉRIENCE — STAGE HAROPA PORT
+             (ouverte par défaut grâce à la classe « ouvert »)
+             ======================================================== -->
+        <article class="exp-item ouvert">
+          <button class="exp-tete" aria-expanded="true" aria-controls="exp-haropa">
+            <span class="exp-tete-info">
+              <span class="exp-badge badge-en-cours est-termine"><span class="point"></span>Mai à juin 2026</span>
+              <span class="exp-entreprise">HAROPA PORT</span>
+              <span class="exp-meta">Stagiaire · Service informatique · Site de Rouen</span>
+            </span>
+            <span class="exp-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9 L12 15 L18 9" /></svg>
+            </span>
+          </button>
 
-      <div class="grille-interets" data-reveal-groupe>
+          <div class="exp-panneau" id="exp-haropa" role="region" aria-label="Détail du stage HAROPA PORT">
+            <div class="exp-contenu">
 
-        <div class="carte interet">
-          <div class="interet-icone" aria-hidden="true">
-            <!-- Écran sur pied -->
-            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M9 20 H15 M12 16 V20" /></svg>
+              <!-- Présentation -->
+              <div class="exp-bloc">
+                <p class="exp-intro">
+                  Six semaines au service informatique d'HAROPA PORT, l'établissement public qui réunit les ports du Havre, de Rouen et de Paris sur l'axe Seine. Un stage orienté support et infrastructure, qui m'a permis de découvrir de l'intérieur le fonctionnement d'un service informatique, ses responsabilités et son exigence au quotidien.
+                </p>
+                <div class="grille-stats" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-top: 1.6rem;">
+                  <div class="stat-boite">
+                    <span class="stat-nombre">6</span>
+                    <span class="stat-libelle">Semaines</span>
+                  </div>
+                  <div class="stat-boite">
+                    <span class="stat-nombre">2026</span>
+                    <span class="stat-libelle">Mai à juin</span>
+                  </div>
+                  <div class="stat-boite">
+                    <span class="stat-nombre">Rouen</span>
+                    <span class="stat-libelle">Site portuaire</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mission principale -->
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Mission principale</p>
+                <p class="stage-lieu">Logiciel de ticket · Diagnostic et résolution d'incidents</p>
+                <p>
+                  Ma mission principale consistait à recevoir, diagnostiquer et résoudre les demandes des utilisateurs à l'aide du logiciel de gestion de tickets du service. Des incidents variés, du plus simple au plus complexe, qui m'ont appris à poser les bonnes questions, à isoler une cause et à expliquer clairement la solution apportée.
+                </p>
+                <div class="nuage-etiquettes" style="margin-top: 1.2rem;">
+                  <span class="etiquette">Réseau / VLAN</span>
+                  <span class="etiquette">Outlook</span>
+                  <span class="etiquette">Teams</span>
+                  <span class="etiquette">Périphériques</span>
+                  <span class="etiquette">Écrans</span>
+                </div>
+              </div>
+
+              <!-- Autres réalisations -->
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Autres réalisations</p>
+                <div class="grille-interets">
+
+                  <div class="carte interet">
+                    <div class="interet-icone" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M9 20 H15 M12 16 V20" /></svg>
+                    </div>
+                    <h3>Installation de postes</h3>
+                    <p>Installation et aménagement de postes de travail : écrans, stations d'accueil (dock) et câblage, pour des environnements propres et prêts à l'emploi.</p>
+                  </div>
+
+                  <div class="carte interet">
+                    <div class="interet-icone" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 4 V3 H15 V4" /><path d="M8 10 H16 M8 14 H16 M8 18 H13" /></svg>
+                    </div>
+                    <h3>Gestion du parc matériel</h3>
+                    <p>Inventaire, maintenance et récupération de données, dont la préparation <strong>en autonomie</strong> d'un poste hors domaine destiné à un bateau.</p>
+                  </div>
+
+                  <div class="carte interet">
+                    <div class="interet-icone" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.6" /><path d="M5 6 V18 C5 19.5 8.1 20.6 12 20.6 C15.9 20.6 19 19.5 19 18 V6" /><path d="M5 12 C5 13.5 8.1 14.6 12 14.6 C15.9 14.6 19 13.5 19 12" /></svg>
+                    </div>
+                    <h3>SQL sur base réelle</h3>
+                    <p>Mise en pratique du SQL sur une vraie base de production : requêtes <code style="font-family: var(--mono); color: var(--lavande);">SELECT</code>, <code style="font-family: var(--mono); color: var(--lavande);">JOIN</code>, <code style="font-family: var(--mono); color: var(--lavande);">GROUP&nbsp;BY</code> et <code style="font-family: var(--mono); color: var(--lavande);">HAVING</code>.</p>
+                  </div>
+
+                  <div class="carte interet">
+                    <div class="interet-icone" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1.5" /><rect x="4" y="14" width="16" height="6" rx="1.5" /><circle cx="7.5" cy="7" r="0.8" fill="currentColor" stroke="none" /><circle cx="7.5" cy="17" r="0.8" fill="currentColor" stroke="none" /></svg>
+                    </div>
+                    <h3>Infrastructure et sauvegardes</h3>
+                    <p>Découverte de l'infrastructure réseau et des mécanismes de sauvegarde qui assurent, en arrière-plan, le bon fonctionnement d'un service informatique.</p>
+                  </div>
+
+                  <div class="carte interet">
+                    <div class="interet-icone" aria-hidden="true">
+                      <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><path d="M3.5 19 C3.5 15.5 6 14 9 14 C12 14 14.5 15.5 14.5 19" /><path d="M16 6 C18 6 19.5 7.5 19.5 9.5 C19.5 11 18.7 12 17.5 12.6 M17 14.2 C19 14.6 20.8 16 20.8 19" /></svg>
+                    </div>
+                    <h3>Accompagnement et pédagogie</h3>
+                    <p>Accompagner les utilisateurs et expliquer simplement les aspects techniques, pour qu'un incident résolu ne se reproduise pas la semaine suivante.</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Compétences mobilisées -->
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Compétences mobilisées</p>
+                <div class="nuage-etiquettes">
+                  <span class="etiquette">Gestion de tickets</span>
+                  <span class="etiquette">Support utilisateurs</span>
+                  <span class="etiquette">SQL</span>
+                  <span class="etiquette">Réseau / VLAN</span>
+                  <span class="etiquette">Parc matériel</span>
+                  <span class="etiquette">Inventaire</span>
+                  <span class="etiquette">Récupération de données</span>
+                  <span class="etiquette">Outlook</span>
+                  <span class="etiquette">Teams</span>
+                  <span class="etiquette">Sauvegardes</span>
+                </div>
+              </div>
+
+              <!-- Bilan -->
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Bilan</p>
+                <p>
+                  Ce stage, orienté support et infrastructure, m'a permis de découvrir concrètement le fonctionnement d'un service informatique et les responsabilités qu'il implique au quotidien. J'y ai gagné en autonomie, en rigueur dans le diagnostic et en aisance dans la relation avec les utilisateurs.
+                </p>
+                <p style="margin-top: 1.1rem;">
+                  Il a confirmé mon intérêt pour le domaine et mon souhait de poursuivre dans l'informatique, tout en gardant un lien avec ma spécialité de développement grâce à la pratique du SQL sur une base réelle. Cette première expérience en entreprise constitue une base solide sur laquelle je compte continuer à m'appuyer pour la suite de mon parcours.
+                </p>
+              </div>
+
+            </div>
           </div>
-          <h3>Installation de postes</h3>
-          <p>Installation et aménagement de postes de travail : écrans, stations d'accueil (dock) et câblage, pour des environnements propres et prêts à l'emploi.</p>
-        </div>
+        </article>
 
-        <div class="carte interet">
-          <div class="interet-icone" aria-hidden="true">
-            <!-- Inventaire / presse-papier -->
-            <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2" /><path d="M9 4 V3 H15 V4" /><path d="M8 10 H16 M8 14 H16 M8 18 H13" /></svg>
+        <!-- ========================================================
+             GABARIT — DEUXIÈME STAGE (à compléter plus tard)
+             Décommenter ce bloc et remplacer le contenu. Retirer la
+             classe « ouvert » de HAROPA ci-dessus si tu veux que ce
+             soit le stage le plus récent qui s'affiche déplié.
+             Pense à donner un id unique au panneau (ex. exp-stage2)
+             et à le référencer dans aria-controls.
+        <article class="exp-item">
+          <button class="exp-tete" aria-expanded="false" aria-controls="exp-stage2">
+            <span class="exp-tete-info">
+              <span class="exp-badge badge-en-cours est-termine"><span class="point"></span>Dates du stage</span>
+              <span class="exp-entreprise">Nom de l'entreprise</span>
+              <span class="exp-meta">Rôle · Service · Lieu</span>
+            </span>
+            <span class="exp-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 9 L12 15 L18 9" /></svg>
+            </span>
+          </button>
+          <div class="exp-panneau" id="exp-stage2" role="region" aria-label="Détail du deuxième stage">
+            <div class="exp-contenu">
+              <div class="exp-bloc">
+                <p class="exp-intro">Présentation du stage…</p>
+              </div>
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Mission principale</p>
+                <p>…</p>
+              </div>
+              <div class="exp-bloc">
+                <p class="exp-sous-titre">Bilan</p>
+                <p>…</p>
+              </div>
+            </div>
           </div>
-          <h3>Gestion du parc matériel</h3>
-          <p>Inventaire, maintenance et récupération de données, dont la préparation <strong>en autonomie</strong> d'un poste hors domaine destiné à un bateau.</p>
-        </div>
+        </article>
+        ======================================================== -->
 
-        <div class="carte interet">
-          <div class="interet-icone" aria-hidden="true">
-            <!-- Base de données -->
-            <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.6" /><path d="M5 6 V18 C5 19.5 8.1 20.6 12 20.6 C15.9 20.6 19 19.5 19 18 V6" /><path d="M5 12 C5 13.5 8.1 14.6 12 14.6 C15.9 14.6 19 13.5 19 12" /></svg>
-          </div>
-          <h3>SQL sur base réelle</h3>
-          <p>Mise en pratique du SQL sur une vraie base de production : requêtes <code style="font-family: var(--mono); color: var(--lavande);">SELECT</code>, <code style="font-family: var(--mono); color: var(--lavande);">JOIN</code>, <code style="font-family: var(--mono); color: var(--lavande);">GROUP&nbsp;BY</code> et <code style="font-family: var(--mono); color: var(--lavande);">HAVING</code>.</p>
-        </div>
-
-        <div class="carte interet">
-          <div class="interet-icone" aria-hidden="true">
-            <!-- Serveurs / sauvegardes -->
-            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1.5" /><rect x="4" y="14" width="16" height="6" rx="1.5" /><circle cx="7.5" cy="7" r="0.8" fill="currentColor" stroke="none" /><circle cx="7.5" cy="17" r="0.8" fill="currentColor" stroke="none" /></svg>
-          </div>
-          <h3>Infrastructure et sauvegardes</h3>
-          <p>Découverte de l'infrastructure réseau et des mécanismes de sauvegarde qui assurent, en arrière-plan, le bon fonctionnement d'un service informatique.</p>
-        </div>
-
-        <div class="carte interet">
-          <div class="interet-icone" aria-hidden="true">
-            <!-- Accompagnement / personnes -->
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><path d="M3.5 19 C3.5 15.5 6 14 9 14 C12 14 14.5 15.5 14.5 19" /><path d="M16 6 C18 6 19.5 7.5 19.5 9.5 C19.5 11 18.7 12 17.5 12.6 M17 14.2 C19 14.6 20.8 16 20.8 19" /></svg>
-          </div>
-          <h3>Accompagnement et pédagogie</h3>
-          <p>Accompagner les utilisateurs et expliquer simplement les aspects techniques, pour qu'un incident résolu ne se reproduise pas la semaine suivante.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ 4. COMPÉTENCES MOBILISÉES ============ -->
-    <section>
-      <div class="section-entete" data-reveal>
-        <span class="section-etiquette">// Ce que j'ai mobilisé</span>
-        <h2 class="section-titre">Compétences mobilisées</h2>
-      </div>
-
-      <div class="carte" data-reveal>
-        <p class="carte-titre">Outils &amp; domaines</p>
-        <div class="nuage-etiquettes">
-          <span class="etiquette">Gestion de tickets</span>
-          <span class="etiquette">Support utilisateurs</span>
-          <span class="etiquette">SQL</span>
-          <span class="etiquette">Réseau / VLAN</span>
-          <span class="etiquette">Parc matériel</span>
-          <span class="etiquette">Inventaire</span>
-          <span class="etiquette">Récupération de données</span>
-          <span class="etiquette">Outlook</span>
-          <span class="etiquette">Teams</span>
-          <span class="etiquette">Sauvegardes</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 5. BILAN ============ -->
-    <section class="section-noire">
-      <div class="section-entete" data-reveal>
-        <span class="section-etiquette">// Ce que j'en retire</span>
-        <h2 class="section-titre">Mon bilan</h2>
-      </div>
-
-      <div class="carte" data-reveal>
-        <p class="carte-titre">En quelques mots</p>
-        <p style="color: var(--texte-2); line-height: 1.95; font-size: 1.05rem;" data-mots>
-          Ce stage, orienté support et infrastructure, m'a permis de découvrir concrètement le fonctionnement d'un service informatique et les responsabilités qu'il implique au quotidien. J'y ai gagné en autonomie, en rigueur dans le diagnostic et en aisance dans la relation avec les utilisateurs.
-        </p>
-        <p style="color: var(--texte-2); line-height: 1.95; font-size: 1.05rem; margin-top: 1.2rem;" data-mots>
-          Il a confirmé mon intérêt pour le domaine et mon souhait de poursuivre dans l'informatique, tout en gardant un lien avec ma spécialité de développement grâce à la pratique du SQL sur une base réelle. Cette première expérience en entreprise constitue une base solide sur laquelle je compte continuer à m'appuyer pour la suite de mon parcours.
-        </p>
       </div>
     </section>
 

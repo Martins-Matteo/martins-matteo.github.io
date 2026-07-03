@@ -350,6 +350,66 @@ document.addEventListener('click', (e) => {
 })();
 
 /* ============================================================
+   10. ACCORDÉON DES EXPÉRIENCES
+   Chaque .exp-item possède un en-tête .exp-tete (bouton) et un
+   panneau .exp-panneau dont la hauteur est animée à l'ouverture.
+   L'item portant la classe « ouvert » est déplié au chargement.
+   Les items se replient/déplient indépendamment.
+   ============================================================ */
+
+(function initAccordeon() {
+  const items = document.querySelectorAll('.exp-item');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const tete = item.querySelector('.exp-tete');
+    const panneau = item.querySelector('.exp-panneau');
+    if (!tete || !panneau) return;
+
+    // État initial : ouvert (hauteur auto) ou fermé (hauteur 0)
+    const ouvertAuDepart = item.classList.contains('ouvert');
+    panneau.style.height = ouvertAuDepart ? 'auto' : '0px';
+    tete.setAttribute('aria-expanded', String(ouvertAuDepart));
+
+    tete.addEventListener('click', () => {
+      const estOuvert = item.classList.contains('ouvert');
+
+      if (estOuvert) {
+        // Fermeture : hauteur réelle → 0
+        panneau.style.height = panneau.scrollHeight + 'px';
+        requestAnimationFrame(() => { panneau.style.height = '0px'; });
+        item.classList.remove('ouvert');
+        tete.setAttribute('aria-expanded', 'false');
+      } else {
+        // Ouverture : 0 → hauteur réelle, puis « auto » pour rester souple
+        item.classList.add('ouvert');
+        tete.setAttribute('aria-expanded', 'true');
+        panneau.style.height = panneau.scrollHeight + 'px';
+        panneau.addEventListener('transitionend', function fin(e) {
+          if (e.propertyName !== 'height') return;
+          panneau.style.height = 'auto';
+          panneau.removeEventListener('transitionend', fin);
+        });
+
+        // Petite entrée en cascade des sous-blocs (si GSAP dispo)
+        if (gsapDispo && !mouvementReduit) {
+          gsap.from(panneau.querySelectorAll('.exp-bloc'), {
+            opacity: 0,
+            y: 18,
+            duration: 0.5,
+            stagger: 0.08,
+            ease: 'power2.out'
+          });
+        }
+      }
+    });
+  });
+
+  // Si la fenêtre est redimensionnée, un panneau ouvert reste en « auto »,
+  // donc rien à recalculer : la hauteur s'adapte d'elle-même.
+})();
+
+/* ============================================================
    ANNÉE AUTOMATIQUE DANS LE PIED DE PAGE
    ============================================================ */
 
