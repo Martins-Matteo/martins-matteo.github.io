@@ -3,195 +3,249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projets · Matteo Martins</title>
-  <meta name="description" content="Projets de Matteo Martins : développement web, base de données, infrastructure réseau, hardware et automatisation." />
-
-  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
+  <title>Projets d'année, Mattéo Martins</title>
+  <meta name="description" content="Projets d'année de BTS SIO de Mattéo Martins : application GSB de gestion des frais en PHP, puis refonte en MVC avec CodeIgniter 4." />
+  <link rel="preload" href="polices/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C4E89'/%3E%3Cpath d='M12 46 H52 M12 40 V52 M52 40 V52' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Ctext x='32' y='33' font-family='Arial' font-weight='bold' font-size='22' fill='%23fff' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <!-- Voile de transition entre les pages -->
-  <div class="voile"></div>
-
-  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
-  <div class="curseur"></div>
-  <div class="curseur-anneau"></div>
-
-  <!-- ============ NAVIGATION ============ -->
-  <header class="nav">
-    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
-    <nav aria-label="Navigation principale">
-      <ul class="nav-liens">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="experience.html">Expériences</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="entete-nom" href="index.html">Mattéo Martins</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="parcours.html">Parcours</a></li>
+          <li><a href="projets.html" aria-current="page">Projets d'année</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Menu plein écran (mobile) -->
-  <div class="menu-mobile">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="experience.html">Expériences</a></li>
-      <li><a href="competences.html">Compétences</a></li>
-      <li><a href="projets.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <main>
-
-    <!-- ============ ENTÊTE DE PAGE ============ -->
-    <header class="entete-page">
-      <p class="hero-etiquette" data-intro>// Ce que j'ai construit</p>
-      <h1 data-intro>Mes <span class="texte-degrade">projets</span></h1>
+  <main id="contenu">
+    <header class="page-tete">
+      <div class="conteneur">
+        <h1>Projets d'année</h1>
+        <p>Les projets menés sur toute une année de BTS SIO, du plus récent au plus ancien, suivis de travaux pratiques.</p>
+      </div>
     </header>
 
-    <!-- ============ GRILLE DE PROJETS ============ -->
-    <section>
-      <div class="grille-projets" data-reveal-groupe>
+    <div class="conteneur">
 
-        <article class="projet-carte">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Chat (Yuumi) -->
-            <svg viewBox="0 0 48 48"><path d="M14 12 L10 4 L19 8" /><path d="M34 12 L38 4 L29 8" /><circle cx="24" cy="24" r="14" /><circle cx="19" cy="22" r="0.8" fill="currentColor" /><circle cx="29" cy="22" r="0.8" fill="currentColor" /><path d="M21 28 Q24 31 27 28" /><path d="M4 22 L10 23 M4 28 L10 27 M44 22 L38 23 M44 28 L38 27" /></svg>
+      <!-- ============ 2e ANNÉE : GSB MVC ============ -->
+      <article class="fiche" id="gsb-mvc">
+        <div class="fiche-tete">
+          <div>
+            <h2>GSB : refonte de la gestion des frais en MVC</h2>
+            <p class="fiche-meta">2e année de BTS, 2026 à 2027. Projet individuel.</p>
           </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">HTML</span>
-              <span class="etiquette">CSS</span>
-              <span class="etiquette">Statique</span>
+          <span class="pastille pastille-encours">En cours</span>
+        </div>
+
+        <div class="fiche-corps">
+          <div>
+            <h3>Contexte</h3>
+            <p>Galaxy Swiss Bourdin (GSB) est un laboratoire pharmaceutique fictif utilisé comme fil rouge en BTS SIO. Ses visiteurs médicaux déclarent leurs frais de déplacement dans une application web, réalisée en groupe en première année.</p>
+
+            <h3>Objectif</h3>
+            <p>Reprendre cette application seul et la réorganiser en architecture MVC avec le framework CodeIgniter 4, pour séparer clairement les données, l'affichage et la logique.</p>
+
+            <h3>Fonctionnalités</h3>
+            <ul class="puces">
+              <li>Trois profils : visiteur médical, comptable et administrateur.</li>
+              <li>Saisie et consultation des frais forfaitisés et hors forfait, mois par mois.</li>
+              <li>Validation des fiches et mise en paiement par le comptable.</li>
+              <li>Gestion des comptes utilisateurs par l'administrateur.</li>
+            </ul>
+
+            <h3>Ce que je fais</h3>
+            <ul class="puces">
+              <li>Migration du code PHP existant vers des modèles, des vues et des contrôleurs CodeIgniter.</li>
+              <li>Reprise et correction du code, de la base de données et des documents de l'an dernier.</li>
+              <li>Suivi des tâches sur Trello et versionnement du code sur GitHub.</li>
+              <li>Livrables : dossier d'examen, documentation utilisateur et démonstration finale.</li>
+            </ul>
+
+            <ul class="technos" aria-label="Technologies">
+              <li>PHP</li><li>CodeIgniter 4</li><li>MySQL</li><li>Git et GitHub</li><li>Trello</li>
+            </ul>
+            <figure class="diagramme">
+              <svg viewBox="0 0 640 220" role="img" aria-labelledby="mvc-titre mvc-desc" font-family="Archivo, sans-serif">
+                <title id="mvc-titre">Architecture MVC de l'application GSB</title>
+                <desc id="mvc-desc">Le navigateur envoie une requête aux routes, qui appellent un contrôleur. Le contrôleur demande les données au modèle, qui lit et écrit dans la base MySQL. Le contrôleur transmet ensuite les données à la vue, qui renvoie la page HTML au navigateur.</desc>
+                <defs>
+                  <marker id="fl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1C4E89"/></marker>
+                </defs>
+                <g fill="#fff" stroke="#1C4E89" stroke-width="1.2">
+                  <rect x="10" y="40" width="100" height="50"/>
+                  <rect x="140" y="40" width="100" height="50"/>
+                  <rect x="270" y="40" width="100" height="50"/>
+                  <rect x="400" y="40" width="100" height="50"/>
+                  <rect x="270" y="150" width="100" height="50"/>
+                </g>
+                <rect x="530" y="40" width="100" height="50" fill="#1C4E89"/>
+                <g fill="#1E2A38" font-size="15" font-weight="600" text-anchor="middle">
+                  <text x="60" y="70">Navigateur</text>
+                  <text x="190" y="70">Routes</text>
+                  <text x="320" y="70">Contrôleur</text>
+                  <text x="450" y="70">Modèle</text>
+                  <text x="320" y="180">Vue</text>
+                </g>
+                <text x="580" y="70" fill="#fff" font-size="15" font-weight="600" text-anchor="middle">MySQL</text>
+                <g stroke="#1C4E89" stroke-width="1.2" fill="none">
+                  <path d="M110 65 H138" marker-end="url(#fl)"/>
+                  <path d="M240 65 H268" marker-end="url(#fl)"/>
+                  <path d="M372 65 H398" marker-start="url(#fl)" marker-end="url(#fl)"/>
+                  <path d="M502 65 H528" marker-start="url(#fl)" marker-end="url(#fl)"/>
+                  <path d="M320 90 V148" marker-end="url(#fl)"/>
+                  <path d="M270 175 H60 V92" marker-end="url(#fl)"/>
+                </g>
+                <g fill="#4F5B66" font-size="12" text-anchor="middle">
+                  <text x="124" y="30">requête</text>
+                  <text x="385" y="30">données</text>
+                  <text x="515" y="30">SQL</text>
+                  <text x="165" y="168">page HTML</text>
+                </g>
+              </svg>
+              <figcaption>Le plan de l'application : chaque requête passe par une route et un contrôleur, le modèle s'occupe de la base de données et la vue de l'affichage.</figcaption>
+            </figure>
+
+
+            <ul class="liens-projet">
+              <li><a href="https://github.com/Martins-Matteo/Gr_4_SLAM_2026_PHP_MVC_MARTINS_MATTEO" rel="noopener">Voir le dépôt sur GitHub</a></li>
+            </ul>
+          </div>
+
+          <figure>
+            <a class="capture capture-image" href="images/gsb-v2/consulter.jpg"><img src="images/gsb-v2/consulter.jpg" alt="Page Mes frais de l'application GSB : état de la fiche, total de 665,90 euros, tableaux des frais forfaitisés et hors forfait" width="1280" height="1041" /></a>
+            <figcaption class="capture-legende">Côté visiteur médical : consultation de la fiche de frais du mois.</figcaption>
+          </figure>
+        </div>
+
+        <div class="galerie">
+          <figure>
+            <a href="images/gsb-v2/saisie.jpg"><img src="images/gsb-v2/saisie.jpg" alt="Formulaire de saisie des frais forfaitisés et hors forfait" loading="lazy" width="1280" height="1447" /></a>
+            <figcaption>Saisie des frais forfaitisés et hors forfait</figcaption>
+          </figure>
+          <figure>
+            <a href="images/gsb-v2/comptable_fiche.jpg"><img src="images/gsb-v2/comptable_fiche.jpg" alt="Fiche de frais vue par le comptable, avec le formulaire de validation" loading="lazy" width="1280" height="1372" /></a>
+            <figcaption>Côté comptable : validation et mise en paiement</figcaption>
+          </figure>
+          <figure>
+            <a href="images/gsb-v2/admin.jpg"><img src="images/gsb-v2/admin.jpg" alt="Page d'administration des comptes utilisateurs" loading="lazy" width="1280" height="1073" /></a>
+            <figcaption>Côté administrateur : gestion des comptes</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- ============ 1re ANNÉE : GSB PHP ============ -->
+      <article class="fiche" id="gsb-php">
+        <div class="fiche-tete">
+          <div>
+            <h2>GSB : application de gestion des frais</h2>
+            <p class="fiche-meta">1re année de BTS, 2025 à 2026. Projet de groupe.</p>
+          </div>
+        </div>
+
+        <div class="fiche-corps">
+          <div>
+            <h3>Contexte</h3>
+            <p>Première version de l'application de gestion des frais du laboratoire GSB, développée en groupe en PHP avec une base de données MySQL.</p>
+
+            <h3>Fonctionnalités</h3>
+            <ul class="puces">
+              <li>Connexion avec message d'erreur en cas d'identifiants incorrects.</li>
+              <li>Saisie et consultation des frais du mois, forfaitisés et hors forfait.</li>
+              <li>Espace comptable et page d'administration des utilisateurs.</li>
+              <li>Base de données relationnelle MySQL.</li>
+            </ul>
+
+            <h3>Mon rôle dans le groupe</h3>
+            <p>J'ai réalisé toute la base de données et les requêtes SQL, la majeure partie du code PHP et une grande partie de la documentation. Un camarade s'est chargé de la maquette et du choix des couleurs.</p>
+
+            <ul class="technos" aria-label="Technologies">
+              <li>PHP</li><li>MySQL</li><li>HTML et CSS</li>
+            </ul>
+          </div>
+
+          <figure>
+            <a class="capture capture-image" href="images/gsb-v1/mes_frais.jpg"><img src="images/gsb-v1/mes_frais.jpg" alt="Page Mes frais de la première version de GSB : tableau des frais du mois et total de 585,90 euros" width="1280" height="860" /></a>
+            <figcaption class="capture-legende">Consultation des frais du mois.</figcaption>
+          </figure>
+        </div>
+
+        <div class="galerie">
+          <figure>
+            <a href="images/gsb-v1/saisie.jpg"><img src="images/gsb-v1/saisie.jpg" alt="Formulaire de saisie des frais de la première version" loading="lazy" width="1280" height="1089" /></a>
+            <figcaption>Saisie des frais</figcaption>
+          </figure>
+          <figure>
+            <a href="images/gsb-v1/compta.jpg"><img src="images/gsb-v1/compta.jpg" alt="Espace comptabilité de la première version" loading="lazy" width="1280" height="800" /></a>
+            <figcaption>Espace comptable</figcaption>
+          </figure>
+          <figure>
+            <a href="images/gsb-v1/admin.jpg"><img src="images/gsb-v1/admin.jpg" alt="Page d'administration des utilisateurs de la première version" loading="lazy" width="1280" height="800" /></a>
+            <figcaption>Administration des utilisateurs</figcaption>
+          </figure>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ============ TRAVAUX PRATIQUES ============ -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="section-tete">
+          <h2>Travaux pratiques</h2>
+          <p>On en a fait beaucoup en première année ; voici les grands thèmes.</p>
+        </div>
+
+        <div class="projets-vedette">
+          <article class="projet-ligne">
+            <p class="projet-quand"><strong>Réseau</strong>TP de BTS SIO</p>
+            <div>
+              <h3>Services réseau sur machines virtuelles</h3>
+              <p>Mise en place de réseaux d'entreprise fictifs, sous Cisco Packet Tracer et avec des machines virtuelles : adressage IP, routage, configuration de serveurs DHCP et DNS.</p>
+              <ul class="technos" aria-label="Technologies"><li>Cisco Packet Tracer</li><li>Machines virtuelles</li><li>DHCP</li><li>DNS</li></ul>
             </div>
-            <h3 class="projet-titre">Yuumi Fan Site</h3>
-            <p class="projet-desc">
-              Site statique dédié à Yuumi, personnage de League of Legends. Projet réalisé dans le cadre du BTS SIO pour maîtriser les fondamentaux du web : structure HTML sémantique, mise en page CSS, responsive design et intégration de médias.
-            </p>
-          </div>
-        </article>
-
-        <article class="projet-carte">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Base de données -->
-            <svg viewBox="0 0 48 48"><ellipse cx="24" cy="10" rx="14" ry="5" /><path d="M10 10 V38 C10 40.8 16.3 43 24 43 C31.7 43 38 40.8 38 38 V10" /><path d="M10 24 C10 26.8 16.3 29 24 29 C31.7 29 38 26.8 38 24" /></svg>
-          </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">PHP</span>
-              <span class="etiquette">MySQL</span>
-              <span class="etiquette">BDD</span>
-              <span class="etiquette">MVC</span>
+          </article>
+          <article class="projet-ligne">
+            <p class="projet-quand"><strong>Systèmes</strong>TP de BTS SIO</p>
+            <div>
+              <h3>Gestion des comptes Windows et Linux</h3>
+              <p>Création et administration de comptes utilisateurs et de groupes, et gestion des droits, sous Windows et sous Linux.</p>
+              <ul class="technos" aria-label="Technologies"><li>Windows</li><li>Linux</li><li>Droits d'accès</li></ul>
             </div>
-            <h3 class="projet-titre">Projet GSB</h3>
-            <p class="projet-desc">
-              Application web dynamique de gestion des frais de déplacement pour le laboratoire fictif Galaxy Swiss Bourdin. Système d'authentification, gestion des fiches de frais, base de données relationnelle et interface administrateur.
-            </p>
-          </div>
-        </article>
-
-        <article class="projet-carte">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Tour PC -->
-            <svg viewBox="0 0 48 48"><rect x="14" y="4" width="20" height="40" rx="2" /><circle cx="24" cy="14" r="4" /><circle cx="24" cy="28" r="4" /><path d="M19 38 H29" /><circle cx="30" cy="8" r="0.8" fill="currentColor" /></svg>
-          </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">Hardware</span>
-              <span class="etiquette">Windows</span>
-              <span class="etiquette">Optimisation</span>
+          </article>
+          <article class="projet-ligne">
+            <p class="projet-quand"><strong>Sécurité</strong>TP de BTS SIO</p>
+            <div>
+              <h3>Attaques en environnement de test</h3>
+              <p>Sur des machines virtuelles isolées : contournement d'un mot de passe et simulation d'une attaque par déni de service, pour comprendre comment ces attaques fonctionnent et comment s'en protéger.</p>
+              <ul class="technos" aria-label="Technologies"><li>Machines virtuelles</li><li>Sécurité</li></ul>
             </div>
-            <h3 class="projet-titre">PC Custom Build</h3>
-            <p class="projet-desc">
-              Montage et configuration de postes de travail personnalisés selon les besoins. Sélection des composants en fonction du budget et de l'usage, assemblage, installation OS, optimisation des performances et overclock.
-            </p>
-          </div>
-        </article>
-
-        <article class="projet-carte">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Réseau (nœuds reliés) -->
-            <svg viewBox="0 0 48 48"><circle cx="24" cy="10" r="4.5" /><circle cx="10" cy="36" r="4.5" /><circle cx="38" cy="36" r="4.5" /><path d="M21.5 14 L12.5 32.5 M26.5 14 L35.5 32.5 M14.5 36 H33.5" /></svg>
-          </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">Linux</span>
-              <span class="etiquette">DNS</span>
-              <span class="etiquette">DHCP</span>
-              <span class="etiquette">Réseau</span>
-            </div>
-            <h3 class="projet-titre">Infrastructure Réseau TP</h3>
-            <p class="projet-desc">
-              Mise en place d'une infrastructure réseau simulée sous Cisco Packet Tracer et en environnement Linux. Configuration des services DNS, DHCP, routage et adressage IP sur un réseau d'entreprise fictif.
-            </p>
-          </div>
-        </article>
-
-        <article class="projet-carte">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Terminal -->
-            <svg viewBox="0 0 48 48"><rect x="5" y="9" width="38" height="30" rx="3" /><path d="M12 19 L18 24 L12 29" /><path d="M22 29 H30" /></svg>
-          </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">Python</span>
-              <span class="etiquette">Bash</span>
-              <span class="etiquette">Automatisation</span>
-            </div>
-            <h3 class="projet-titre">Scripts d'automatisation</h3>
-            <p class="projet-desc">
-              Développement de scripts Python et Bash pour automatiser des tâches répétitives : gestion de fichiers, traitement de données, surveillance système et déploiement. Gain de temps significatif sur les tâches d'administration.
-            </p>
-          </div>
-        </article>
-
-        <article class="projet-carte a-venir">
-          <div class="projet-visuel" aria-hidden="true">
-            <!-- Plus -->
-            <svg viewBox="0 0 48 48"><path d="M24 14 V34 M14 24 H34" /></svg>
-          </div>
-          <div class="projet-corps">
-            <div class="projet-etiquettes">
-              <span class="etiquette">À venir</span>
-            </div>
-            <h3 class="projet-titre">Prochain projet</h3>
-            <p class="projet-desc">
-              De nouveaux projets arrivent au fil de la formation. Revenez régulièrement pour voir les dernières réalisations.
-            </p>
-          </div>
-        </article>
-
+          </article>
+        </div>
       </div>
     </section>
-
   </main>
 
-  <!-- ============ PIED DE PAGE ============ -->
   <footer class="pied">
-    <span class="pied-logo">M<span>M</span></span>
-    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins · BTS SIO SLAM</p>
-    <div class="pied-liens">
-      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    <div class="conteneur">
+      <p>Mattéo Martins, BTS SIO SLAM, <span class="annee">2026</span></p>
+      <ul>
+        <li><a href="https://github.com/Martins-Matteo" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:martins.matteo.dev@gmail.com">E-mail</a></li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Librairies (CDN) : GSAP pour les animations au scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="site.js" defer></script>
 </body>
 </html>

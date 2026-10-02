@@ -3,130 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact · Matteo Martins</title>
-  <meta name="description" content="Contacter Matteo Martins, étudiant développeur en BTS SIO option SLAM." />
-
-  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
+  <title>Contact, Mattéo Martins</title>
+  <meta name="description" content="Contacter Mattéo Martins, étudiant en BTS SIO SLAM, pour une alternance, un stage ou une question." />
+  <link rel="preload" href="polices/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C4E89'/%3E%3Cpath d='M12 46 H52 M12 40 V52 M52 40 V52' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Ctext x='32' y='33' font-family='Arial' font-weight='bold' font-size='22' fill='%23fff' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <!-- Voile de transition entre les pages -->
-  <div class="voile"></div>
-
-  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
-  <div class="curseur"></div>
-  <div class="curseur-anneau"></div>
-
-  <!-- ============ NAVIGATION ============ -->
-  <header class="nav">
-    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
-    <nav aria-label="Navigation principale">
-      <ul class="nav-liens">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="experience.html">Expériences</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="entete-nom" href="index.html">Mattéo Martins</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="parcours.html">Parcours</a></li>
+          <li><a href="projets.html">Projets d'année</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Menu plein écran (mobile) -->
-  <div class="menu-mobile">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="experience.html">Expériences</a></li>
-      <li><a href="competences.html">Compétences</a></li>
-      <li><a href="projets.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <main>
-
-    <!-- ============ ENTÊTE DE PAGE ============ -->
-    <header class="entete-page">
-      <p class="hero-etiquette" data-intro>// Prenons contact</p>
-      <h1 data-intro>Me <span class="texte-degrade">contacter</span></h1>
+  <main id="contenu">
+    <header class="page-tete">
+      <div class="conteneur">
+        <h1>Contact</h1>
+        <p>Je recherche une alternance en école d'ingénieur informatique pour la rentrée 2027. Pour en parler, pour un projet ou une question, le plus simple est de m'écrire. Je réponds personnellement à chaque message.</p>
+      </div>
     </header>
 
-    <!-- ============ CONTACT ============ -->
-    <section>
-      <div class="grille-contact">
-
-        <div class="contact-infos" data-reveal>
-          <h3>Discutons ensemble</h3>
-          <p>
-            Que ce soit pour un projet, un stage, une question ou simplement pour échanger, n'hésitez pas à m'écrire. Je réponds dans les plus brefs délais.
-          </p>
-
-          <a href="mailto:martins.matteo.dev@gmail.com" class="lien-contact">
-            <!-- Enveloppe -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7 L12 13 L20.5 7" /></svg>
-            martins.matteo.dev@gmail.com
-          </a>
-
-          <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener" class="lien-contact">
-            <!-- Chevrons code -->
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7 L3 12 L8 17" /><path d="M16 7 L21 12 L16 17" /><path d="M13.5 5 L10.5 19" /></svg>
-            github.com/Martins-Matteo
-          </a>
-
-          <a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" target="_blank" rel="noopener" class="lien-contact">
-            <!-- Logo LinkedIn (rempli) -->
-            <svg viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--violet-clair); stroke: none;"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" /></svg>
-            linkedin.com/in/mattéo-martins
-          </a>
-
-          <div class="carte" style="margin-top: 2rem;">
-            <p class="carte-titre">Disponibilité</p>
-            <p style="color: var(--texte-2); font-size: 0.94rem; line-height: 1.85;">
-              <strong style="color: var(--lavande); font-weight: 500;">Stage réalisé chez HAROPA PORT</strong> (Rouen, mai à juin 2026), au sein du service informatique.<br /><br />
-              Ouvert à toute opportunité de collaboration, de projet ou d'échange.
-            </p>
+    <section class="section">
+      <div class="conteneur contact-bloc">
+        <div>
+          <p class="courriel"><a href="mailto:martins.matteo.dev@gmail.com">martins.matteo.dev@gmail.com</a></p>
+          <div class="actions">
+            <a class="bouton bouton-plein" href="mailto:martins.matteo.dev@gmail.com">Écrire un e-mail</a>
+            <button type="button" class="bouton bouton-contour" data-copier="martins.matteo.dev@gmail.com">Copier l'adresse</button>
           </div>
+          <p class="copie-retour" role="status" aria-live="polite"></p>
         </div>
 
-        <div data-reveal data-delai="0.15">
-          <form class="formulaire-contact">
-            <input type="text" name="nom" placeholder="Votre nom" required />
-            <input type="email" name="email" placeholder="Votre email" required />
-            <input type="text" name="sujet" placeholder="Sujet" />
-            <textarea name="message" placeholder="Votre message..." required></textarea>
-            <button type="submit" class="btn btn-principal">Envoyer</button>
-          </form>
-        </div>
-
+        <ul class="liste-liens">
+          <li><a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" rel="noopener">LinkedIn</a><span>Profil et parcours</span></li>
+          <li><a href="https://github.com/Martins-Matteo" rel="noopener">GitHub</a><span>Code de mes projets</span></li>
+          <li><a href="cv-matteo-martins.pdf" download>CV en PDF</a><span>Version à imprimer</span></li>
+        </ul>
       </div>
     </section>
-
   </main>
 
-  <!-- ============ PIED DE PAGE ============ -->
   <footer class="pied">
-    <span class="pied-logo">M<span>M</span></span>
-    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins · BTS SIO SLAM</p>
-    <div class="pied-liens">
-      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    <div class="conteneur">
+      <p>Mattéo Martins, BTS SIO SLAM, <span class="annee">2026</span></p>
+      <ul>
+        <li><a href="https://github.com/Martins-Matteo" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:martins.matteo.dev@gmail.com">E-mail</a></li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Librairies (CDN) : GSAP pour les animations au scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="site.js" defer></script>
 </body>
 </html>

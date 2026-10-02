@@ -3,187 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compétences · Matteo Martins</title>
-  <meta name="description" content="Compétences techniques de Matteo Martins : développement web, SQL, Python, systèmes Windows et Linux, réseaux et hardware." />
-
-  <!-- Typographies : Unbounded (titres) · Sora (corps) · JetBrains Mono (labels) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Sora:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23040208'/%3E%3Ctext x='32' y='43' font-family='Arial' font-weight='bold' font-size='26' fill='%238B5CF6' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
+  <title>Compétences, Mattéo Martins</title>
+  <meta name="description" content="Compétences de Mattéo Martins : PHP, SQL, HTML et CSS, support informatique, et ce qu'il apprend en BTS SIO SLAM." />
+  <link rel="preload" href="polices/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231C4E89'/%3E%3Cpath d='M12 46 H52 M12 40 V52 M52 40 V52' stroke='%23fff' stroke-width='3' fill='none'/%3E%3Ctext x='32' y='33' font-family='Arial' font-weight='bold' font-size='22' fill='%23fff' text-anchor='middle'%3EMM%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
 
-  <!-- Voile de transition entre les pages -->
-  <div class="voile"></div>
-
-  <!-- Curseur personnalisé (activé en JS sur pointeur fin) -->
-  <div class="curseur"></div>
-  <div class="curseur-anneau"></div>
-
-  <!-- ============ NAVIGATION ============ -->
-  <header class="nav">
-    <a href="index.html" class="nav-logo" aria-label="Accueil">M<span>M</span></a>
-    <nav aria-label="Navigation principale">
-      <ul class="nav-liens">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="apropos.html">À propos</a></li>
-        <li><a href="experience.html">Expériences</a></li>
-        <li><a href="competences.html">Compétences</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="entete-nom" href="index.html">Mattéo Martins</a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="parcours.html">Parcours</a></li>
+          <li><a href="projets.html">Projets d'année</a></li>
+          <li><a href="competences.html" aria-current="page">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Menu plein écran (mobile) -->
-  <div class="menu-mobile">
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="apropos.html">À propos</a></li>
-      <li><a href="experience.html">Expériences</a></li>
-      <li><a href="competences.html">Compétences</a></li>
-      <li><a href="projets.html">Projets</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-
-  <main>
-
-    <!-- ============ ENTÊTE DE PAGE ============ -->
-    <header class="entete-page">
-      <p class="hero-etiquette" data-intro>// Mon arsenal technique</p>
-      <h1 data-intro>Mes <span class="texte-degrade">compétences</span></h1>
+  <main id="contenu">
+    <header class="page-tete">
+      <div class="conteneur">
+        <h1>Compétences</h1>
+        <p>Ce que je sais faire, et où je l'ai appris.</p>
+      </div>
     </header>
 
-    <!-- ============ GRILLE DE COMPÉTENCES ============ -->
-    <section>
-      <div class="grille-competences" data-reveal-groupe>
+    <section class="section">
+      <div class="conteneur">
 
-        <!-- Développement web -->
-        <div class="carte">
-          <p class="carte-titre">Développement web</p>
-          <div class="competence" data-niveau="80">
-            <div class="competence-entete"><span class="competence-nom">HTML5</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="70">
-            <div class="competence-entete"><span class="competence-nom">CSS3</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="40">
-            <div class="competence-entete"><span class="competence-nom">JavaScript</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
+        <div class="comp-bloc">
+          <h2>Ce que je pratique</h2>
+          <p class="comp-intro">Utilisé dans mes projets ou en stage.</p>
+          <ul class="comp-grille">
+            <li><span class="comp-nom">PHP</span><span class="comp-ou">Application GSB en 1re année, puis sa refonte en 2e année</span></li>
+            <li><span class="comp-nom">SQL et MySQL</span><span class="comp-ou">Projets GSB, et requêtes sur une vraie base de production chez <strong>HAROPA PORT</strong></span></li>
+            <li><span class="comp-nom">HTML et CSS</span><span class="comp-ou">Projets GSB et ce portfolio</span></li>
+            <li><span class="comp-nom">Support utilisateurs</span><span class="comp-ou">Gestion de tickets et dépannage matériel et logiciel chez <strong>HAROPA PORT</strong></span></li>
+            <li><span class="comp-nom">Windows et parc matériel</span><span class="comp-ou">Installation de postes, inventaire, récupération de données</span></li>
+            <li><span class="comp-nom">Montage de PC</span><span class="comp-ou">Montage, configuration et réparation d'ordinateurs</span></li>
+            <li><span class="comp-nom">Serveur LAMP</span><span class="comp-ou">Hébergement de mes projets de cours</span></li>
+            <li><span class="comp-nom">Pack Office</span><span class="comp-ou">Dossiers et documentation de projet</span></li>
+          </ul>
         </div>
 
-        <!-- Langages & bases de données -->
-        <div class="carte">
-          <p class="carte-titre">Langages &amp; bases de données</p>
-          <div class="competence" data-niveau="85">
-            <div class="competence-entete"><span class="competence-nom">SQL</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="70">
-            <div class="competence-entete"><span class="competence-nom">Python</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="55">
-            <div class="competence-entete"><span class="competence-nom">Java</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
+        <div class="comp-bloc">
+          <h2>Ce que j'apprends</h2>
+          <p class="comp-intro">Vu en cours ou en train de le prendre en main.</p>
+          <ul class="comp-grille apprend">
+            <li><span class="comp-nom">CodeIgniter 4</span><span class="comp-ou">Framework MVC de la refonte GSB</span></li>
+            <li><span class="comp-nom">Git et GitHub</span><span class="comp-ou">Versionnement de la refonte GSB</span></li>
+            <li><span class="comp-nom">Python</span><span class="comp-ou">Cours de BTS</span></li>
+            <li><span class="comp-nom">Java</span><span class="comp-ou">Cours de BTS</span></li>
+            <li><span class="comp-nom">JavaScript</span><span class="comp-ou">Cours de BTS</span></li>
+            <li><span class="comp-nom">Linux et Bash</span><span class="comp-ou">Cours de BTS et serveur LAMP</span></li>
+            <li><span class="comp-nom">Réseau</span><span class="comp-ou">Adressage IP, VLAN, DNS, DHCP : TP sous Packet Tracer et incidents en stage</span></li>
+            <li><span class="comp-nom">ROS 2</span><span class="comp-ou">À découvrir pendant mon stage au <strong>Lab-STICC</strong></span></li>
+          </ul>
         </div>
 
-        <!-- Systèmes d'exploitation (Windows en tête : point fort) -->
-        <div class="carte">
-          <p class="carte-titre">Systèmes d'exploitation</p>
-          <div class="competence" data-niveau="80">
-            <div class="competence-entete"><span class="competence-nom">Windows</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="65">
-            <div class="competence-entete"><span class="competence-nom">Linux</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="60">
-            <div class="competence-entete"><span class="competence-nom">Bash / Shell</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
+        <div class="comp-bloc">
+          <h2>Ma façon de travailler</h2>
+          <p class="comp-intro">Des qualités, avec à chaque fois un exemple concret.</p>
+          <ul class="comp-grille humain">
+            <li><span class="comp-nom">Autonomie</span><span class="comp-ou">Chez HAROPA PORT, j'ai préparé seul un poste hors domaine destiné à un bateau.</span></li>
+            <li><span class="comp-nom">Esprit d'équipe</span><span class="comp-ou">Les actions du Rotaract se montent à plusieurs : nettoyage de plage, bingos solidaires.</span></li>
+            <li><span class="comp-nom">Curiosité</span><span class="comp-ou">J'aide sur des forums d'entraide technique comme CommentÇaMarche ou Reddit.</span></li>
+            <li><span class="comp-nom">Organisation</span><span class="comp-ou">Je suis mon projet GSB sur Trello, tâche par tâche.</span></li>
+          </ul>
         </div>
 
-        <!-- Réseaux & infrastructure -->
-        <div class="carte">
-          <p class="carte-titre">Réseaux &amp; infrastructure</p>
-          <div class="competence" data-niveau="50">
-            <div class="competence-entete"><span class="competence-nom">Architecture réseau</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="45">
-            <div class="competence-entete"><span class="competence-nom">DNS / DHCP</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="45">
-            <div class="competence-entete"><span class="competence-nom">Cisco Packet Tracer</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-        </div>
-
-        <!-- Hardware & outils -->
-        <div class="carte">
-          <p class="carte-titre">Hardware &amp; outils</p>
-          <div class="competence" data-niveau="85">
-            <div class="competence-entete"><span class="competence-nom">Montage PC</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="70">
-            <div class="competence-entete"><span class="competence-nom">Diagnostic matériel</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-          <div class="competence" data-niveau="45">
-            <div class="competence-entete"><span class="competence-nom">Git / GitHub</span><span class="competence-pct">0%</span></div>
-            <div class="competence-barre"><div class="competence-remplissage"></div></div>
-          </div>
-        </div>
-
-        <!-- En cours d'apprentissage -->
-        <div class="carte">
-          <p class="carte-titre">En cours d'apprentissage</p>
-          <p style="color: var(--texte-2); font-size: 0.92rem; line-height: 1.8;">
-            J'explore de nouvelles technologies en continu. Actuellement en train d'approfondir :
-          </p>
-          <div class="nuage-etiquettes">
-            <span class="etiquette">React</span>
-            <span class="etiquette">PHP</span>
-            <span class="etiquette">Docker</span>
-            <span class="etiquette">API REST</span>
-            <span class="etiquette">Node.js</span>
-          </div>
+        <div class="comp-bloc">
+          <h2>Langues</h2>
+          <ul class="comp-grille apprend" style="margin-top: 1.6rem;">
+            <li><span class="comp-nom">Français</span><span class="comp-ou">Langue maternelle</span></li>
+            <li><span class="comp-nom">Anglais</span><span class="comp-ou">Courant</span></li>
+          </ul>
         </div>
 
       </div>
     </section>
-
   </main>
 
-  <!-- ============ PIED DE PAGE ============ -->
   <footer class="pied">
-    <span class="pied-logo">M<span>M</span></span>
-    <p class="pied-texte">© <span class="annee-courante">2026</span> Matteo Martins · BTS SIO SLAM</p>
-    <div class="pied-liens">
-      <a href="https://github.com/Martins-Matteo" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:martins.matteo.dev@gmail.com">Email</a>
+    <div class="conteneur">
+      <p>Mattéo Martins, BTS SIO SLAM, <span class="annee">2026</span></p>
+      <ul>
+        <li><a href="https://github.com/Martins-Matteo" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/matt%C3%A9o-martins-106573369/" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:martins.matteo.dev@gmail.com">E-mail</a></li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Librairies (CDN) : GSAP pour les animations au scroll -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="site.js" defer></script>
 </body>
 </html>
